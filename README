@@ -95,7 +95,7 @@ For more information, see the [Zeek script documentation](./doc/html/index.html)
 
 ### Wall-Clock and CPU Time
 
-<img src="./imgs/wallclock.png" width=600 />
+![Wall-Clock Screenshot](./imgs/wallclock.png "Wall-Clock and CPU Time")
 
 * `zeek_start_time_seconds` The epoch timestamp of when the process was started. Used to detect periodic crashes.
 
@@ -107,7 +107,7 @@ For more information, see the [Zeek script documentation](./doc/html/index.html)
 
 ### Number of Invocations
 
-<img src="./imgs/invocations.png" width=600 />
+![Invocations Screenshot](./imgs/invocations.png "Invocations")
 
 * `zeek_function_calls_total` The number of times Zeek functions were called, by function and parent function. This can be used to identify the most common execution path in scripts.
 
@@ -125,7 +125,7 @@ For more information, see the [Zeek script documentation](./doc/html/index.html)
  
 ### Function Durations, by Function and Parent Function
 
-<img src="./imgs/func_times.png" width=600 />
+![Function Durations Screenshot](./imgs/func_times.png "Function Durations")
 
 There are two very similar metrics, one which includes execution time in child functions, and one which doesn't.
 
