@@ -76,7 +76,7 @@ On ESnet systems, the impact ranges from 0.05% to 15%. Workers are impacted most
 the volume of event and function calls. The function call hook is the most expensive, adding about 2 microseconds to every
 function call. However, on a very busy system, with > 100k calls/second, this will add up to 200ms each second.
 
-# Advanced 
+# Advanced
 
 ## Argument Labels
 
@@ -102,7 +102,7 @@ For more information, see the [Zeek script documentation](./doc/html/index.html)
 * `zeek_total_cpu_time_seconds`
    The total amount of CPU time spent in this process. This uses the standard library `clock()` function call, which returns
    an approximation. This can give an idea of how much "headroom" there is before more resources are needed.
-   
+
    _Note_: The logger node runs multiple threads, which will result in an inaccurate count in most cases, as they get scheduled on different CPUs and execute in parallel.
 
 ### Number of Invocations
@@ -120,19 +120,18 @@ For more information, see the [Zeek script documentation](./doc/html/index.html)
 * `zeek_cpu_time_per_function_type_seconds` The amount of time spent in Zeek functions, by type.
     Types are Built In Functions (BIFs), and the three script-land function types: events, hooks, and functions.
     Note that script hooks are different from plugin hooks.
-     
+
 * `zeek_hook_cpu_time_seconds` The amount of time spent in Zeek plugin hooks, by hook name.
- 
+
 ### Function Durations, by Function and Parent Function
 
 ![Function Durations Screenshot](./imgs/func_times.png "Function Durations")
 
 There are two very similar metrics, one which includes execution time in child functions, and one which doesn't.
 
-* `zeek_cpu_time_per_function_seconds` The amount of time spent in Zeek functions, by function and parent function. 
-    Note that this includes the time any child functions take to execute, and as such will count those 
+* `zeek_cpu_time_per_function_seconds` The amount of time spent in Zeek functions, by function and parent function.
+    Note that this includes the time any child functions take to execute, and as such will count those
     executions multiple times when summed.
 
 * `zeek_absolute_cpu_time_per_function_seconds` The "absolute" amount of time spent in Zeek functions. These
     metrics *do not* include the time spent in child functions, and thus will give valid data when summed.
-
